@@ -10,7 +10,7 @@
     "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,ts,css}\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Anushka Raj",
   "license": "ISC",
   "devDependencies": {
     "eslint-config-prettier": "^6.11.0",
