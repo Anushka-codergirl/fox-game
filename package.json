@@ -1,14 +1,15 @@
 {
   "name": "fox-game",
   "version": "1.0.0",
-  "description": "",
+  "description": "Fox game",
   "main": "index.js",
+  "homepage": "https://anushka-codergirl.github.io/fox-game/",
   "scripts": {
     "dev": "parcel src/index.html",
     "test": "jest",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
     "format:check": "prettier --ignore-path ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
-    "predeploy": "yarn build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "keywords": [],
