@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Fox game",
   "main": "index.js",
-  "homepage": "https://anushka-codergirl.github.io/fox-game/",
+  "homepage": "https://anushka-codergirl.github.io/fox-gamee/",
   "scripts": {
     "dev": "parcel src/index.html",
     "test": "jest",
