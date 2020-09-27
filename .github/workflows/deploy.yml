@@ -1,4 +1,4 @@
-name: Deploy Gatsby Site to GitHub Pages
+name: Deploy Built Site to Pages
 
 on:
   push:
@@ -10,13 +10,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: npm install, build, and csv
+      - name: npm install and build
+        working-directory: public
         run: |
           npm install
-          npm run build
-          npm run csv
+          npm run build -- --public-url /fox-game/
       - name: Deploy site to gh-pages branch
-        uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
+        uses: crazy-max/ghaction-github-pages@v1.4.0
+        env:
+          GITHUB_PAT: ${{ secrets.PAT }}
         with:
-          repo-token: ${{ secrets.ACCESS_TOKEN }}
-          site-directory: public
+          build_dir: public
