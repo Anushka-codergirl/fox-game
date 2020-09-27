@@ -1,6 +1,5 @@
 name: Deploy Built Site to Pages
 
-
 on:
   push:
     branches: 
@@ -24,4 +23,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: master
-          build_dir:  public/
+          site-directory: public
