@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: npm install and build
-        working-directory: public
+        working-directory: /
         run: |
           npm install
           npm run build -- --public-url /fox-game/
@@ -20,4 +20,4 @@ jobs:
         env:
           GITHUB_PAT: ${{ secrets.PAT }}
         with:
-          build_dir: public
+          build_dir: /
