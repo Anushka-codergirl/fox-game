@@ -1,26 +1,22 @@
-name: Deploy Built Site to Pages
+name: Deploy Gatsby Site to GitHub Pages
 
 on:
   push:
-    branches: 
-     - master 
- 
+    branches:
+      - master
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@master
-      - name: npm install and build
-      
+      - name: npm install, build, and csv
         run: |
           npm install
-          npm run build -- --public-url /fox-game/
-          
+          npm run build
+          npm run csv
       - name: Deploy site to gh-pages branch
-        uses: crazy-max/ghaction-github-pages@v1.4.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: master
+        uses: alex-page/blazing-fast-gh-pages-deploy@v1.1.0
+        with:
+          repo-token: ${{ secrets.ACCESS_TOKEN }}
           site-directory: public
